@@ -1,0 +1,17 @@
+package com.cg.jh01.ui;
+
+import javax.persistence.EntityManager;
+
+import com.cg.jh01.entity.Employee;
+import com.cg.jh01.util.JPAUtil;
+
+public class App02 {
+
+	public static void main(String[] args) {
+		EntityManager em=JPAUtil.getEntityManager();
+		Employee employee=em.find(Employee.class,101L);
+		System.out.println(employee);
+		em.close();
+	}
+
+}
